@@ -8,7 +8,7 @@ on:
 
 jobs:
   push_to_registry_rstudio_with_reticulate:
-    name: Push Docker image to Docker Hub
+    name: Push rstudio with reticulate to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -34,7 +34,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
   push_to_registry_rstudio_with_reticulate_and_sigprofiler:
-    name: Push Docker image to Docker Hub
+    name: Push rstudio with sigprofiller to Docker Hub
+    needs: push_to_registry_rstudio_with_reticulate
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
