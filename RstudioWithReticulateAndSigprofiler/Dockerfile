@@ -6,3 +6,4 @@ RUN echo 'export LC_ALL=en_US.UTF-8'>>.profile
 RUN R -e "install.packages('reticulate')"
 RUN R -e "install.packages('devtools')"
 RUN R -e "library('reticulate');library('devtools');install_github('AlexandrovLab/SigProfilerExtractorR')"
+RUN chmod 777 -R /usr/local/lib/python3.8/dist-packages/
